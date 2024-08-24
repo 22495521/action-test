@@ -19,7 +19,7 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo VARIABLE=${{ secrets.ENV_VARIABLE }} >> .env
+          echo ENV_VARIABLE=${{ secrets.ENV_VARIABLE }} >> .env
         # 可加入多個環境變數
 
       - name: Login to Docker Hub
@@ -54,4 +54,4 @@ jobs:
             docker rm -f github-ac-sample || true
             docker run -d -p 3003:3000 --name github-ac-sample --env-file $HOME/websample/node-env/.env ${{ secrets.DOCKER_HUB_USERNAME }}/ironman-app-2023-amd64:latest
           '
-        # Docker 指令中，不能使用 `~` 路徑，可以使用 $Home 作為替代
+        # Docker 指令中，不能使用 `~` 路徑，可以使c用 $Home 作為替代
