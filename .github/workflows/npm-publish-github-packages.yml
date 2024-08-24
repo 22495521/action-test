@@ -20,3 +20,13 @@ jobs:
       - name: Install, build
         run: |
           npm install
+
+      - name: Create .env file
+        run: |
+          echo ENV_VARIALBES=${{ secrets.ENV_VARIALBES }} >> .env
+          echo PORT=${{ secrets.ENV_PORT }} >> .env
+
+      - name: look .env file
+        run: |
+          cat .env
+          ls -al
