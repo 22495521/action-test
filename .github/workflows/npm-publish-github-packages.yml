@@ -44,4 +44,4 @@ jobs:
           ENV_VARIABLE: ${{ secrets.ENV_VARIABLE }} # 從 GitHub Secrets 中取得環境變數的值
 
       - name: Restart PM2 # 第八步，重啟 PM2
-        run: ssh root@172.234.95.61 'cd ~/website-sample/action-test/ && pm2 restart www --update-env' # 透過 SSH 連到虛擬主機，然後進到應用程式的目錄，並重啟所有 PM2 管理的應用程式
+        run: ssh root@172.234.95.61 'cd ~/website-sample/action-test/ && npm start ' # 透過 SSH 連到虛擬主機，然後進到應用程式的目錄，並重啟所有 PM2 管理的應用程式
